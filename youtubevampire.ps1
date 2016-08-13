@@ -16,7 +16,7 @@ function downloadvideo ($url)
     {
          & $youtubedl $url
     }
-function downloadaudio 
+function downloadaudio ($url)
     {
          & $youtubedl "--ffmpeg-location" $ffmpeg  "-x" $url
     }
@@ -38,12 +38,12 @@ if ($Playlisturl -match "list")
             {
                 if($mp3orno -match "Y")
                     {
-                        downloadaudio $video.URL
+                        downloadaudio $video.URL.substring(0,43)
                     }
                     else
                     {
                         Write-Host ("Downloading " + $video.innerText)
-                        downloadvideo  $video.URL
+                        downloadvideo  $video.URL.substring(0,43)
                     }
             }
     }
