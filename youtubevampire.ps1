@@ -14,7 +14,7 @@ else
 
 function downloadvideo ($url)
     {
-         & $youtubedl $url
+         & $youtubedl "--ffmpeg-location" $ffmpeg $url
     }
 function downloadaudio ($url)
     {
